@@ -9,6 +9,12 @@ def encode(password):
 
     return encoded_password
 
+def decoder(password):
+    str_number = str(password)
+    new_number = ""
+    for i in str_number:
+        new_number += str(int(i)-3)
+    return new_number
 
 def main():
     while True:
@@ -23,9 +29,9 @@ def main():
         if choice == "1":
             password = input("Please enter your password to encode: ")
             encoded_password = encode(password)
-            print(f"Your password has been encoded and stored: {encoded_password}")
+            print(f"Your password has been encoded and stored!")
         elif choice == "2":
-            pass
+            print(f'The encoded password is {encoded_password}, and the original password is {password}.')
         elif choice == "3":
             print("Goodbye!")
             break
